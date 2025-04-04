@@ -1,0 +1,183 @@
+/* ========== NAVBAR ========== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns everything to the left */
+  background: linear-gradient(to right, #fce4ec, #e3f2fd);
+  padding: 15px 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+
+/* ========== Navbar Left Section (Mentra Logo + Nav Links) ========== */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between logo and links */
+  flex-grow: 1; /* Ensures it stays on the left */
+}
+
+
+/* 🔥 Mentra Logo (Elegant & Stylish) */
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff66b2;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+}
+
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+
+/* ========== NAV LINKS (Next to Logo on the Left) ========== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between links */
+}
+
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-family: Arial, sans-serif;
+  display: inline-block;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+/* 🔥 Gradient Hover Effect on Buttons */
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff66b2, #ff758c);
+  transition: all 0.4s ease-in-out;
+  border-radius: 50px;
+  z-index: -1;
+  transform: translateX(-50%) scaleX(0);
+}
+
+
+.nav-links a:hover::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+
+.nav-links a:hover {
+  color: white;
+  box-shadow: 0px 4px 20px rgba(255, 102, 178, 0.6);
+  transform: scale(1.05);
+}
+
+
+/* Active Link Effect */
+.nav-links a.active {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  box-shadow: 0px 4px 15px rgba(255, 102, 178, 0.8);
+  transform: scale(1.05);
+}
+
+
+/* ========== Profile Menu (On the Left) ========== */
+.profile-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Moves it to the right side */
+}
+
+
+/* Profile Button */
+.profile-btn {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+
+.profile-btn:hover {
+  background: rgba(173, 216, 230, 0.3);
+}
+
+
+/* Dropdown */
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+
+/* Dropdown Items */
+.dropdown-item {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+
+.dropdown-item:hover {
+  background: rgba(173, 216, 230, 0.3);
+  color: #0077b6;
+}
+
+
+/* Logout Button */
+.logout-btn {
+  background: #ff5ca4;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 10px;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+
+.logout-btn:hover {
+  background: #e04e92;
+}
+
+
+

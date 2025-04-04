@@ -1,0 +1,55 @@
+.profile-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .profile-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ff69b4;
+  }
+  
+  .profile-section {
+    margin: 15px 0;
+    text-align: left;
+  }
+  
+  .profile-section label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .profile-section input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .logout-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #ff69b4, #ff85c2);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .logout-button:hover {
+    background: linear-gradient(to right, #ff85c2, #ff69b4);
+    transform: scale(1.05);
+  }
+  

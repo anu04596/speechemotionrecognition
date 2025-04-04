@@ -1,0 +1,73 @@
+.policy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe6fa, #e3fdfd);
+    padding: 20px;
+}
+
+.policy-box {
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    color: #222;
+    font-family: "Poppins", sans-serif;
+}
+
+.policy-box h2 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ff66b2;
+}
+
+.policy-box h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #ff758c;
+}
+
+.policy-box p {
+    font-size: 14px;
+    margin: 8px 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.privacy-footer {
+    font-size: 14px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.privacy-footer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.privacy-footer a:hover {
+    text-decoration: underline;
+}
+
+.back-home {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #ff66b2;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-home:hover {
+    text-decoration: underline;
+}
