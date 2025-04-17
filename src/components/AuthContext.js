@@ -47,18 +47,18 @@ export const AuthProvider = ({ children }) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
-
+  
       if (response.ok) {
-        const data = await response.json();  // Get user data from the response
-        setUser(data.user);  // Save the user info to state
-        localStorage.setItem("user", JSON.stringify(data.user));  // Store user in localStorage for persistence
-        return true;  // Successful login
+        const data = await response.json();
+        setUser(data.user);  // Save the user object
+        localStorage.setItem("user", JSON.stringify(data.user));  // Save to localStorage for persistence
+        return true;
       } else {
         const data = await response.json();
         if (data.error) {
-          setError(data.error);  // Display the error message from the backend
+          setError(data.error);
         }
-        return false;  // Invalid credentials or some server issue
+        return false;
       }
     } catch (error) {
       console.error("Login error:", error);
@@ -66,6 +66,7 @@ export const AuthProvider = ({ children }) => {
       return false;
     }
   };
+  
 
   // Logout function
   const logout = () => {
