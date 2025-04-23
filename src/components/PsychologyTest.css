@@ -1,93 +1,92 @@
 /* Psychology Test Container */
 .psychology-test-container {
-    max-width: 800px;
-    margin: 120px auto 50px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(12px);
-    border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    overflow-y: auto;
-  }
-  
-  /* Heading */
-  h2 {
-    font-size: 30px;
-    font-weight: bold;
-    color: #6a5acd; /* Pastel Lavender */
-  }
-  
-  /* Question Box */
-  .question-box {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 12px;
-    margin: 20px 0;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Labels and Options */
-  label {
-    display: block;
-    margin: 8px 0;
-    font-size: 18px;
-    color: #333;
-    font-weight: 500;
-  }
-  
-  /* Dropdown */
-  select {
-    padding: 12px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    background: #f8f9fa;
-  }
-  
-  /* Submit Button */
-  .submit-button {
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
-    color: white;
-    border: none;
-    padding: 14px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    position: sticky; /* Keeps button visible */
-    bottom: 20px;
-    display: block;
-    margin: 20px auto 0;
-    width: 60%;
-    text-align: center;
-  }
-  
-  .submit-button:hover {
-    background: linear-gradient(to right, #f8a7a7, #fcd4d4);
-  }
-  
-  /* Results Box */
-  .results-container {
-    margin-top: 20px;
-    background: rgba(240, 248, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Page Scroll Fix */
-  body {
-    background: linear-gradient(to bottom, #fce3e3, #e3f2fd);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-  
-  /* Fix Footer Overlapping Issue */
-  .psychology-test-container {
-    padding-bottom: 100px; /* Extra space for submit button */
-  }
-  
+  max-width: 800px;
+  margin: 120px auto 50px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow-y: auto;
+}
+
+/* Heading */
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #6a5acd; /* Pastel Lavender */
+}
+
+/* Question Box */
+.question-box {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels and Options */
+label {
+  display: block;
+  margin: 8px 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Dropdown */
+select {
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f8f9fa;
+}
+
+/* Submit Button */
+.submit-button {
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  position: sticky; /* Keeps button visible */
+  bottom: 20px;
+  display: block;
+  margin: 20px auto 0;
+  width: 60%;
+  text-align: center;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #f8a7a7, #fcd4d4);
+}
+
+/* Results Box */
+.results-container {
+  margin-top: 20px;
+  background: rgba(240, 248, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Scroll Fix */
+body {
+  background: linear-gradient(to bottom, #fce3e3, #e3f2fd);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Fix Footer Overlapping Issue */
+.psychology-test-container {
+  padding-bottom: 100px; /* Extra space for submit button */
+}

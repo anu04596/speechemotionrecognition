@@ -27,8 +27,9 @@ def signup():
     # Check if user already exists
     with open(CSV_FILE, "r") as file:
         reader = csv.reader(file)
+        next(reader)
         for row in reader:
-            if row and row[1] == email:  # Check email in CSV
+            if row and row[1].strip() == email:  # Check email in CSV
                 return jsonify({"error": "Email already in use"}), 409
 
     # Add new user to CSV
@@ -49,7 +50,7 @@ def login():
         reader = csv.reader(file)
         next(reader)  # Skip header
         for row in reader:
-            if row and row[1] == email and row[2] == password:
+            if row and row[1].strip() == email and row[2].strip() == password:
                 return jsonify({"message": "Login successful!", "user": {"fullName": row[0], "email": row[1]}}), 200
 
     return jsonify({"error": "Invalid credentials"}), 401

@@ -1,27 +1,26 @@
 .selection-container {
-    text-align: center;
-    margin-top: 100px;  /* ✅ Push content down to avoid overlap */
-    padding: 20px;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .analyze-button, .test-button {
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
-    border: none;
-    padding: 15px 25px;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .analyze-button:hover, .test-button:hover {
-    transform: scale(1.05);
-  }
-  
+  text-align: center;
+  margin-top: 100px;  /* ✅ Push content down to avoid overlap */
+  padding: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.analyze-button, .test-button {
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  border: none;
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.analyze-button:hover, .test-button:hover {
+  transform: scale(1.05);
+}

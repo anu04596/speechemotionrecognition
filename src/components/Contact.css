@@ -1,71 +1,70 @@
 /* 🌸 Full-Screen Contact Page */
 .contact-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    width: 100%;
-    background: linear-gradient(135deg, #f8f9fa, #e3f2fd, #ffebf7);
-    padding: 50px 20px;
-    box-sizing: border-box;
-  }
-  
-  /* 💎 Glassmorphism Contact Form */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #f8f9fa, #e3f2fd, #ffebf7);
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+/* 💎 Glassmorphism Contact Form */
+.contact-container {
+  width: 100%;
+  max-width: 500px; /* ✅ This fixes the overflow issue */
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* ✍️ Input Fields */
+.contact-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: 0.3s;
+}
+
+/* 🚀 Send Button */
+.contact-button {
+  width: 100%; /* ✅ Makes sure the button aligns properly */
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #ff69b4, #ff85c2);
+  color: white;
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background: linear-gradient(to right, #ff85c2, #ff69b4);
+  transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.6);
+}
+
+/* ✅ Responsive Fixes */
+@media (max-width: 768px) {
   .contact-container {
-    width: 100%;
-    max-width: 500px; /* ✅ This fixes the overflow issue */
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
+    width: 90%;
+    padding: 30px;
   }
-  
-  /* ✍️ Input Fields */
-  .contact-input {
-    width: 100%;
-    padding: 15px;
-    font-size: 16px;
-    border: none;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    outline: none;
-    transition: 0.3s;
-  }
-  
-  /* 🚀 Send Button */
+
   .contact-button {
-    width: 100%; /* ✅ Makes sure the button aligns properly */
-    padding: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 30px;
-    background: linear-gradient(to right, #ff69b4, #ff85c2);
-    color: white;
-    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
+    font-size: 16px;
   }
-  
-  .contact-button:hover {
-    background: linear-gradient(to right, #ff85c2, #ff69b4);
-    transform: scale(1.08);
-    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.6);
-  }
-  
-  /* ✅ Responsive Fixes */
-  @media (max-width: 768px) {
-    .contact-container {
-      width: 90%;
-      padding: 30px;
-    }
-  
-    .contact-button {
-      font-size: 16px;
-    }
-  }
-  
+}

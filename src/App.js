@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Homepage from "./components/Homepage";
 import UseMentra from "./components/UseMentra";
@@ -12,10 +17,11 @@ import { AuthProvider, useAuth } from "./components/AuthContext";
 import Footer from "./components/Footer";
 import PsychologyTest from "./components/PsychologyTest";
 import PrivacyPolicy from "./components/PrivacyPolicy";
-import Dashboard from "./components/Dashboard"; // ✅ Import Dashboard
-import ProfileSettings from "./components/ProfileSettings"; // ✅ Import Profile Settings
+import Dashboard from "./components/Dashboard";
+import ProfileSettings from "./components/ProfileSettings";
+import MentraChatbot from "./components/MentraChatbot";
 
-// Protect routes when user is not logged in
+// Protected Route Component
 const ProtectedRoute = ({ element }) => {
   const { user } = useAuth();
   return user ? element : <Navigate to="/login" />;
@@ -36,11 +42,17 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/contact" element={<Contact />} />
-          
+
           {/* Protected Routes */}
           <Route path="/dashboard" element={<ProtectedRoute element={<Dashboard />} />} />
           <Route path="/profile-settings" element={<ProtectedRoute element={<ProfileSettings />} />} />
+
+          {/* Catch-all for undefined routes */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
+
+        {/* Chatbot shown on all pages */}
+        <MentraChatbot />
         <Footer />
       </Router>
     </AuthProvider>

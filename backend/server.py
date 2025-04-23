@@ -47,24 +47,29 @@ def signup():
     except Exception as e:
         return jsonify({"error": f"Failed to register user: {str(e)}"}), 500
 
+
 @app.route("/login", methods=["POST"])
 def login():
     data = request.json
     email = data.get("email")
     password = data.get("password")
 
-    # Debugging: Print received data
-    print(f"Received login data: Email: {email}, Password: {password}")
-
-    # Check CSV for user
     with open(CSV_FILE, "r") as file:
         reader = csv.reader(file)
-        next(reader)  # Skip header row
+        next(reader)  # Skip header
         for row in reader:
             if row and row[1] == email and row[2] == password:
-                return jsonify({"message": "Login successful!", "user": row[0]})
+                return jsonify({
+                    "message": "Login successful!",
+                    "user": {
+                        "fullName": row[0],
+                        "email": row[1]
+                    }
+                })
 
     return jsonify({"error": "Invalid credentials"}), 401
 
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)

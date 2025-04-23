@@ -6,6 +6,7 @@
   min-height: 100vh; 
   padding-top: 100px; /* Adjust this according to navbar height */
   background: linear-gradient(135deg, #ffe6fa, #e3fdfd);
+
 }
 
 /* Glassmorphism Effect */
@@ -62,15 +63,29 @@
 /* Privacy Policy Section */
 .privacy-policy {
   display: flex;
-  align-items: center;
-  font-size: 14px;
+  align-items: flex-start;
+  width: 100%;
   margin-top: 10px;
-  text-align: left;
+  font-size: 14px;
+  color: #333;
+  gap: 8px;
+  flex-wrap: wrap;
+  word-break: break-word;
+  box-sizing: border-box;
 }
 
-.privacy-policy input {
-  margin-right: 8px;
+.privacy-policy input[type="checkbox"] {
+  margin-top: 2px;
+  flex-shrink: 0;
 }
+
+.privacy-policy label {
+  flex: 1;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+
 
 /* Links */
 .auth-box p {
