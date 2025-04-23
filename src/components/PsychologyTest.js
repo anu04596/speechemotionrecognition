@@ -194,7 +194,7 @@ const PsychologyTest = () => {
 
     // ✅ Send to backend
     try {
-      const response = await fetch("http://localhost:5000/submit-test", {
+      const response = await fetch("http://mentra-iuml.onrender.com/submit-test", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ gender, ...answers }),
