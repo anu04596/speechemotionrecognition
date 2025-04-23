@@ -11,7 +11,7 @@ import logging
 # Enable logging
 logging.basicConfig(level=logging.DEBUG)
 
-app = Flask(_name_)
+app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Path to CSV file
