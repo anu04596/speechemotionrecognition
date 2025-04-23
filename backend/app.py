@@ -9,7 +9,7 @@ import tempfile
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
-app = Flask(_name_)
+app = Flask(__name__)
 CORS(app, origins="http://localhost:3000")
 
 
