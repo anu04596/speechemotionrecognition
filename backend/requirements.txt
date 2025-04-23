@@ -4,3 +4,5 @@ tensorflow
 numpy
 librosa
 soundfile
+flask_cors
+
