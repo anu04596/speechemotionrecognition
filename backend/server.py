@@ -2,8 +2,16 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import csv
 import os
+import librosa
+import numpy as np
+import tensorflow as tf
+import tempfile
+import logging
 
-app = Flask(__name__)
+# Enable logging
+logging.basicConfig(level=logging.DEBUG)
+
+app = Flask(_name_)
 CORS(app)  # Enable CORS for all routes
 
 # Path to CSV file
@@ -14,6 +22,12 @@ if not os.path.exists(CSV_FILE):
     with open(CSV_FILE, "w", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(["Full Name", "Email", "Password"])  # Headers
+
+# Initialize the LSTM model (ensure this is correct for your model)
+model = tf.keras.models.load_model("model.h5")  # Replace with your actual model path
+
+# Define emotion labels
+emotion_labels = ['Happy', 'Fear', 'Sad', 'Neutral', 'Angry', 'Pleasant', 'Disgust']
 
 @app.route("/signup", methods=["POST"])
 def signup():
@@ -70,6 +84,56 @@ def login():
     return jsonify({"error": "Invalid credentials"}), 401
 
 
+@app.route("/analyze", methods=["POST"])
+def analyze():
+    if 'audio' not in request.files:
+        logging.error("No audio file found in request")
+        return jsonify({"error": "No audio file found"}), 400
 
-if __name__ == "__main__":
+    audio_file = request.files['audio']
+    logging.debug(f"Received audio file: {audio_file.filename}")
+
+    try:
+        # Save the uploaded audio temporarily
+        tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".wav")
+        audio_file.save(tmp.name)
+        tmp_path = tmp.name
+        tmp.close()
+
+        logging.debug(f"Saved audio file to {tmp_path}")
+
+        # Load the audio file using librosa
+        y, sr = librosa.load(tmp_path, sr=None)  # Use the original sample rate
+
+        # Extract MFCC features
+        mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=40)
+        mfccs = np.mean(mfccs.T, axis=0)
+
+        logging.debug(f"Extracted MFCCs: {mfccs.shape}")
+
+        # Reshape for LSTM model input
+        mfccs = np.expand_dims(mfccs, axis=-1)  # Add channel dimension
+        mfccs = np.expand_dims(mfccs, axis=0)   # Add batch dimension
+        logging.debug(f"Reshaped MFCCs for LSTM: {mfccs.shape}")
+
+        # Predict the emotion using the LSTM model
+        prediction = model.predict(mfccs)
+        predicted_emotion = emotion_labels[np.argmax(prediction)]
+
+        logging.debug(f"Predicted Emotion: {predicted_emotion}")
+
+    except Exception as e:
+        logging.error(f"Error analyzing audio: {str(e)}")
+        return jsonify({"error": f"Error analyzing audio: {str(e)}"}), 500
+
+    finally:
+        try:
+            os.remove(tmp_path)
+        except:
+            pass
+
+    return jsonify({"emotion": predicted_emotion}), 200
+
+
+if _name_ == "_main_":
     app.run(host="0.0.0.0", port=5000, debug=True)
