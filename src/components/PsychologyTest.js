@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import "./PsychologyTest.css";
-import {
-  PieChart, Pie, Cell,
-  BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer
+import { Cell,BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer
 } from "recharts";
-
-const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042', '#8dd1e1', '#a4de6c'];
-
-
 
 const PsychologyTest = () => {
   const [gender, setGender] = useState(""); // Store gender selection

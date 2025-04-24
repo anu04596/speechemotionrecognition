@@ -8,7 +8,6 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [isChecked, setIsChecked] = useState(false);
   const [error, setError] = useState("");
 
   const { signup } = useAuth();
@@ -98,15 +97,13 @@ const Signup = () => {
             <input
               type="checkbox"
               id="privacy-check"
-              checked={isChecked}
-              onChange={() => setIsChecked(!isChecked)}
               required
             />
             <label htmlFor="privacy-check">
               I agree to the <a href="/privacy-policy">Privacy Policy</a>
             </label>
           </div>
-          <button type="submit" className="auth-btn" disabled={!isChecked}>
+          <button type="submit" className="auth-btn">
             Sign Up
           </button>
         </form>
