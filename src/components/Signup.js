@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "./AuthContext";
 import "./Auth.css";
 
 const Signup = () => {
@@ -8,9 +7,9 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
   const [error, setError] = useState("");
 
-  const { signup } = useAuth();
   const navigate = useNavigate();
 
   const handleSignup = async (e) => {
@@ -97,13 +96,15 @@ const Signup = () => {
             <input
               type="checkbox"
               id="privacy-check"
+              checked={isChecked}
+              onChange={() => setIsChecked(!isChecked)}
               required
             />
             <label htmlFor="privacy-check">
               I agree to the <a href="/privacy-policy">Privacy Policy</a>
             </label>
           </div>
-          <button type="submit" className="auth-btn">
+          <button type="submit" className="auth-btn" disabled={!isChecked}>
             Sign Up
           </button>
         </form>
