@@ -37,7 +37,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await fetch("http://mentra-iuml.onrender.com/signup", {
+      const response = await fetch("https://mentra-iuml.onrender.com/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -65,7 +65,7 @@ function UseMentra() {
     try {
       setLoading(true);
       setEmotion("");
-      const response = await axios.post("http://localhost:5000/analyze", formData, {
+      const response = await axios.post("https://mentra-iuml.onrender.com/analyze", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setEmotion(response.data.emotion);
