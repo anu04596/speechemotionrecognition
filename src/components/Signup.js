@@ -15,6 +15,9 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
 
+    // Clear any previous error messages
+    setError("");
+
     // Validation for empty fields
     if (!fullName || !email || !password || !confirmPassword) {
       setError("All fields are required!");
@@ -27,8 +30,11 @@ const Signup = () => {
       return;
     }
 
-    // Clear any previous error messages
-    setError("");
+    // Basic password validation (e.g., minimum length)
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long.");
+      return;
+    }
 
     try {
       const response = await fetch("http://mentra-iuml.onrender.com/signup", {

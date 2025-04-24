@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
-  
+
       if (response.ok) {
         const data = await response.json();
         setUser(data.user);  // Save the user object
@@ -66,7 +66,6 @@ export const AuthProvider = ({ children }) => {
       return false;
     }
   };
-  
 
   // Logout function
   const logout = () => {
